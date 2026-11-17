@@ -1,101 +1,99 @@
 <div class="container text-center">
-    <button (click)="downloadFile()" class="btn btn-primary mb-5 shadow border">Download PDF Resume</button>
+    <button (click)="downloadFile()" class="btn btn-primary mb-5">Download PDF Resume</button>
 
     <div class="pb-2">
-            <accordion [isAnimated]="true" class="shadow">
-            <accordion-group [(isOpen)] ="isWorkExperienceOpen"> 
+        <accordion [isAnimated]="true" class="resume-accordion">
+            <accordion-group [(isOpen)]="isWorkExperienceOpen">
                 <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
-                    <div style="visibility:hidden">></div>
+                    <div style="visibility:hidden">&gt;</div>
                     <div class="btn-link">Work Experience</div>
 
-                    <div style="width: 10.95px">
-                         <div *ngif="!isWorkExperienceOpen" style="color: white">></div>
-                            <div *ngif="isWorkExperienceOpen"  style="color: white">v</div>   
+                    <div class="chevron">
+                        <span *ngIf="!isWorkExperienceOpen">&gt;</span>
+                        <span *ngIf="isWorkExperienceOpen">v</span>
                     </div>
                 </button>
 
-                
-                
-
-                <div style="text-align: left;">
-                    <img src="../../assets/work-experience/momentum_2_logo.jpg"
-                        alt="Momentum logo"
-                        width="75"
-                        height="75"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/work-experience/momentum_2_logo.jpg" alt="Momentum logo">
+                    </div>
 
                     <h2 class="mb-0">Angular / Java Engineer</h2>
                     <h3 class="text-primary">Momentum Health (Client Deployment)</h3>
                     <p><small>2026 – Present</small></p>
                     <ul>
-                        <li>Currently contributing to enterprise healthcare software within a microservices-based environment.</li>
-                        <li>Working across Angular and TypeScript on the frontend, alongside Java and Spring Boot backend services.</li>
-                        <li>Involved in maintaining application functionality, improving APIs, refining existing services and supporting integrations across the platform.</li>
+                        <li>Currently contributing to enterprise healthcare software within a microservices-based
+                            environment.</li>
+                        <li>Working across Angular and TypeScript on the frontend, alongside Java and Spring Boot
+                            backend services.</li>
+                        <li>Involved in maintaining application functionality, improving APIs, refining existing
+                            services and supporting integrations across the platform.</li>
                     </ul>
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-                    <img src="../../assets/work-experience/techzarlogy_logo.jpg"
-                        alt="Techzarlogy logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/work-experience/techzarlogy_logo.jpg" alt="Techzarlogy logo">
+                    </div>
 
                     <h2 class="mb-0">Java Software Engineer</h2>
                     <h3 class="text-primary">Techzarlogy</h3>
                     <p><small>2026 – Present</small></p>
                     <ul>
-                        <li>Working across the full-stack development lifecycle, building and enhancing applications using Java, Spring Boot and Angular.</li>
-                        <li>Contributing to backend services, REST APIs and frontend functionality, helping deliver and maintain business-focused software solutions.</li>
-                        <li>Continuing to grow my experience in enterprise application development, software architecture and collaborative engineering.</li>
+                        <li>Working across the full-stack development lifecycle, building and enhancing applications
+                            using Java, Spring Boot and Angular.</li>
+                        <li>Contributing to backend services, REST APIs and frontend functionality, helping deliver and
+                            maintain business-focused software solutions.</li>
+                        <li>Continuing to grow my experience in enterprise application development, software
+                            architecture and collaborative engineering.</li>
                     </ul>
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-                    <img src="../../assets/work-experience/mtn_logo.jpg"
-                        alt="MTN logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/work-experience/mtn_logo.jpg" alt="MTN logo">
+                    </div>
 
                     <h2 class="mb-0">Software Engineer Intern</h2>
                     <h3 class="text-primary">MTN Software Solutions</h3>
                     <p><small>2025 – 2026</small></p>
                     <ul>
-                        <li>Spent 15 months working in a large-scale enterprise engineering environment, primarily focused on backend development with TypeScript, Node.js and NestJS.</li>
-                        <li>Gained hands-on experience building and maintaining microservices, working with databases, REST APIs and distributed systems.</li>
-                        <li>Explored cloud infrastructure and DevOps practices using Azure, Docker, Kubernetes and Dapr.</li>
-                        <li>Worked across telecommunications, internal business platforms and AI-powered data solutions, gaining exposure to both traditional software engineering and emerging AI technologies.</li>
-                        <li>Collaborated with engineers and cross-functional teams through Agile development, code reviews, testing and continuous delivery.</li>
+                        <li>Spent 15 months working in a large-scale enterprise engineering environment, primarily
+                            focused on backend development with TypeScript, Node.js and NestJS.</li>
+                        <li>Gained hands-on experience building and maintaining microservices, working with databases,
+                            REST APIs and distributed systems.</li>
+                        <li>Explored cloud infrastructure and DevOps practices using Azure, Docker, Kubernetes and Dapr.
+                        </li>
+                        <li>Worked across telecommunications, internal business platforms and AI-powered data solutions,
+                            gaining exposure to both traditional software engineering and emerging AI technologies.</li>
+                        <li>Collaborated with engineers and cross-functional teams through Agile development, code
+                            reviews, testing and continuous delivery.</li>
                     </ul>
                 </div>
 
-
-
             </accordion-group>
-            <accordion-group [(isOpen)]="isEducationOpen">  
+
+            <accordion-group [(isOpen)]="isEducationOpen">
                 <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
-                        <div style="visibility:hidden">></div>
-                        <div class="btn-link">Education</div>
+                    <div style="visibility:hidden">&gt;</div>
+                    <div class="btn-link">Education</div>
 
-                        <div style="width: 10.95px">
-                            <div *ngif="!isEducationOpen" style="color: white">></div>
-                            <div *ngif="isEducationOpen"  style="color: white">v</div>   
-                        </div>
-                    </button>
+                    <div class="chevron">
+                        <span *ngIf="!isEducationOpen">&gt;</span>
+                        <span *ngIf="isEducationOpen">v</span>
+                    </div>
+                </button>
 
-                <div style="text-align: left;">
-
-                    <!-- Nelson Mandela University -->
-                    <img src="../../assets/education/nelson_mandela_university_logo.jpg"
-                        alt="Nelson Mandela University logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/education/nelson_mandela_university_logo.jpg"
+                            alt="Nelson Mandela University logo">
+                    </div>
 
                     <h2 class="mb-0">Bachelor of Laws (LLB)</h2>
                     <h3 class="text-primary">Nelson Mandela University</h3>
@@ -105,316 +103,220 @@
                         <li>2019 - 2022 · (Completed)</li>
                         <li>Grade: Withheld </li>
                     </ul>
-
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-
-                    <!-- WeThinkCode_ -->
-                    <img src="../../assets/education/wethinkcode_logo.jpg"
-                        alt="WeThinkCode logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/education/wethinkcode_logo.jpg" alt="WeThinkCode logo">
+                    </div>
 
                     <h2 class="mb-0">Associate's Degree in Software Engineering</h2>
                     <h3 class="text-primary">WeThinkCode_</h3>
                     <ul>
-                        <li>Completed a practical, project-based software engineering programme focused on developing industry-ready technical skills.</li>
+                        <li>Completed a practical, project-based software engineering programme focused on developing
+                            industry-ready technical skills.</li>
                         <li>2023 – 2025 · (Completed)</li>
                         <li>Grade: 80% </li>
                     </ul>
-
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-
-                    <!-- Richfield Graduate Institute of Technology -->
-                    <img src="../../assets/education/richfieldeducation_logo.jpg"
-                        alt="Richfield logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/education/richfieldeducation_logo.jpg" alt="Richfield logo">
+                    </div>
 
                     <h2 class="mb-0">BSc (Hons) Information Technology</h2>
                     <h3 class="text-primary">Richfield Graduate Institute of Technology</h3>
                     <ul>
-                        <li>Planned postgraduate studies focused on advancing technical knowledge and developing deeper expertise in Information Technology.</li>
+                        <li>Planned postgraduate studies focused on advancing technical knowledge and developing deeper
+                            expertise in Information Technology.</li>
                         <li>2027 – 2028 · (Planned)</li>
                     </ul>
-
                 </div>
 
             </accordion-group>
-            <accordion-group [isOpen]="isCertificationsOpen">  
+
+            <accordion-group [(isOpen)]="isCertificationsOpen">
                 <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
-                    <div style="visibility:hidden">></div>
+                    <div style="visibility:hidden">&gt;</div>
                     <div class="btn-link">Certifications</div>
 
-                    <div style="width: 10.95px">
-                         <div *ngif="!isCertificationsOpen" style="color: white">></div>
-                            <div *ngif="isCertificationsOpen" style="color: white">v</div>   
+                    <div class="chevron">
+                        <span *ngIf="!isCertificationsOpen">&gt;</span>
+                        <span *ngIf="isCertificationsOpen">v</span>
                     </div>
                 </button>
 
-                
-                <div style="text-align: left;">
-
-                    <!-- freeCodeCamp -->
-                    <img src="../../assets/certifications/freecodecamp.png"
-                        alt="freeCodeCamp logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/certifications/freecodecamp.png" alt="freeCodeCamp logo">
+                    </div>
 
                     <h3>Foundational C# with Microsoft</h3>
                     <h4 class="text-primary">freeCodeCamp</h4>
                     <p><small>Issued April 2026</small></p>
                     <ul>
-                        <li>Completed a structured C# certification covering programming fundamentals and object-oriented development using Microsoft's C# ecosystem.</li>
+                        <li>Completed a structured C# certification covering programming fundamentals and
+                            object-oriented development using Microsoft's C# ecosystem.</li>
                         <li>Credential ID: afrikafunda-fcswm</li>
                         <li><a href="https://freecodecamp.org/certification/afrikafunda/foundational-c-sharp-with-microsoft"
-                            target="_blank">View Credential</a></li>
+                                target="_blank" rel="noopener">View Credential</a></li>
                     </ul>
-
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-
-                    <!-- Microsoft -->
-                    <img src="../../assets/certifications/microsoft.png"
-                        alt="Microsoft logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/certifications/microsoft.png" alt="Microsoft logo">
+                    </div>
 
                     <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
                     <h4 class="text-primary">Microsoft</h4>
                     <p><small>Issued July 2025</small></p>
                     <ul>
-                        <li>Demonstrated foundational knowledge of cloud computing, Azure services, cloud architecture and security concepts.</li>
+                        <li>Demonstrated foundational knowledge of cloud computing, Azure services, cloud architecture
+                            and security concepts.</li>
                         <li>Credential ID: 2FD3073D6AEB3FC7</li>
                     </ul>
-
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-
-                    <!-- Udemy / Java -->
-                    <img src="../../assets/certifications/udemy.png"
-                        alt="Udemy logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/certifications/udemy.png" alt="Udemy logo">
+                    </div>
 
                     <h3>Microservices with Java and Spring Boot</h3>
                     <h4 class="text-primary">Udemy – Madan's Course</h4>
                     <p><small>November 2026</small></p>
                     <ul>
-                        <li>Completed additional practical learning in Java-based microservices development, Spring Boot and backend application architecture.</li>
+                        <li>Completed additional practical learning in Java-based microservices development, Spring Boot
+                            and backend application architecture.</li>
                     </ul>
-
                 </div>
 
                 <hr>
 
-                <div style="text-align: left;">
-
-                    <!-- Zero To Mastery -->
-                    <img src="../../assets/certifications/zero-to-mastery.png"
-                        alt="Zero To Mastery logo"
-                        width="100"
-                        height="100"
-                        style="object-fit: contain;">
+                <div class="resume-entry">
+                    <div class="icon-box-lg">
+                        <img src="../../assets/certifications/zero-to-mastery.png" alt="Zero To Mastery logo">
+                    </div>
 
                     <h3>Complete Python Developer</h3>
                     <h4 class="text-primary">Zero To Mastery (Udemy)</h4>
                     <p><small>2024</small></p>
                     <ul>
-                        <li>Completed practical Python training covering programming fundamentals, application development and core software engineering concepts.</li>
+                        <li>Completed practical Python training covering programming fundamentals, application
+                            development and core software engineering concepts.</li>
                     </ul>
-
                 </div>
 
             </accordion-group>
-            
-            
+
             <accordion-group [(isOpen)]="IsSkillsOpen">
-
-                <button class="btn btn-block justify-content-between d-flex w-100"
-                        accordion-heading>
-
-                    <div style="visibility: hidden">></div>
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden">&gt;</div>
                     <div class="btn-link">Skills</div>
 
-                    <div style="width: 10.95px">
-                        <div *ngIf="!IsSkillsOpen" style="color: white">></div>
-                        <div *ngIf="IsSkillsOpen" style="color: white">v</div>
+                    <div class="chevron">
+                        <span *ngIf="!IsSkillsOpen">&gt;</span>
+                        <span *ngIf="IsSkillsOpen">v</span>
                     </div>
-
                 </button>
 
                 <div class="row" style="text-align: left;">
 
                     <!-- Programming Languages & Web -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <h3>Languages & Web</h3>
-
+                        <h3 class="skill-group-heading">Languages &amp; Web</h3>
                         <div class="d-flex flex-wrap align-items-center">
-
-                            <div class="skill-icon-slot" title="Java">
-                                <img src="assets/skills/Java_Logo.svg" alt="Java" class="skill-icon">
+                            <div class="icon-box-md" title="Java"><img src="assets/skills/Java_Logo.svg" alt="Java">
                             </div>
-
-                            <div class="skill-icon-slot" title="TypeScript">
-                                <img src="assets/skills/typescript_logo.jpg" alt="TypeScript" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="JavaScript">
-                                <img src="assets/skills/javascript_developer_logo.jpg" alt="JavaScript" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Python">
-                                <img src="assets/skills/3840px-Python-logo-notext.svg.webp" alt="Python" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="C#">
-                                <img src="assets/skills/Csharp_Logo.png" alt="C#" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="HTML5">
-                                <img src="assets/skills/HTML5_logo_and_wordmark.svg%20(1).webp" alt="HTML5" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="CSS3">
-                                <img src="assets/skills/Official_CSS_Logo.svg" alt="CSS3" class="skill-icon">
-                            </div>
-
+                            <div class="icon-box-md" title="TypeScript"><img
+                                    src="assets/skills/Typescript_logo_2020.svg" alt="TypeScript"></div>
+                            <div class="icon-box-md" title="JavaScript"><img
+                                    src="assets/skills/javascript_developer_logo.jpg" alt="JavaScript"></div>
+                            <div class="icon-box-md" title="Python"><img
+                                    src="assets/skills/3840px-Python-logo-notext.svg.webp" alt="Python"></div>
+                            <div class="icon-box-md" title="C#"><img src="assets/skills/Csharp_Logo.png" alt="C#"></div>
+                            <div class="icon-box-md" title="HTML5"><img src="assets/skills/html5.svg" alt="HTML5"></div>
+                            <div class="icon-box-md" title="CSS3"><img src="assets/skills/css.svg" alt="CSS3"></div>
                         </div>
                     </div>
 
                     <!-- Frameworks & Backend -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <h3>Frameworks & Backend</h3>
-
+                        <h3 class="skill-group-heading">Frameworks &amp; Backend</h3>
                         <div class="d-flex flex-wrap align-items-center">
-
-                            <div class="skill-icon-slot" title="Angular">
-                                <img src="assets/skills/angular_gradient.png" alt="Angular" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="React">
-                                <img src="assets/skills/3840px-React-icon.svg.webp" alt="React" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Node.js">
-                                <img src="assets/skills/3840px-Node.js_logo_2015.svg.webp" alt="Node.js" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="NestJS">
-                                <img src="assets/skills/3840px-NestJS.svg.webp" alt="NestJS" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="ASP.NET / .NET">
-                                <img src="assets/skills/Microsoft_.NET_logo.svg.webp" alt=".NET" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Spring Boot">
-                                <img src="assets/skills/Spring_Boot.svg.webp" alt="Spring Boot" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Flask">
-                                <img src="assets/skills/Flask.png" alt="Flask" class="skill-icon">
-                            </div>
-
+                            <div class="icon-box-md" title="Angular"><img src="assets/skills/angular_gradient.png"
+                                    alt="Angular"></div>
+                            <div class="icon-box-md" title="React"><img src="assets/skills/3840px-React-icon.svg.webp"
+                                    alt="React"></div>
+                            <div class="icon-box-md" title="Node.js"><img
+                                    src="assets/skills/3840px-Node.js_logo_2015.svg.webp" alt="Node.js"></div>
+                            <div class="icon-box-md" title="NestJS"><img src="assets/skills/3840px-NestJS.svg.webp"
+                                    alt="NestJS"></div>
+                            <div class="icon-box-md" title="ASP.NET / .NET"><img
+                                    src="assets/skills/Microsoft_.NET_logo.svg.webp" alt=".NET"></div>
+                            <div class="icon-box-md" title="Spring Boot"><img src="assets/skills/Spring_Boot.svg.webp"
+                                    alt="Spring Boot"></div>
+                            <div class="icon-box-md" title="Flask"><img src="assets/skills/Flask.png" alt="Flask"></div>
                         </div>
                     </div>
 
                     <!-- Databases -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <h3>Databases & Data</h3>
-
+                        <h3 class="skill-group-heading">Databases &amp; Data</h3>
                         <div class="d-flex flex-wrap align-items-center">
-
-                            <div class="skill-icon-slot" title="MongoDB">
-                                <img src="assets/skills/mongodb-icon-2.svg" alt="MongoDB" class="skill-icon">
+                            <div class="icon-box-md" title="MongoDB"><img src="assets/skills/mongodb-wordmark-dark.svg"
+                                    alt="MongoDB"></div>
+                            <div class="icon-box-md" title="SQL"><img src="assets/skills/Sql_data_base_with_logo.svg"
+                                    alt="SQL"></div>
+                            <div class="icon-box-md" title="Prisma"><img src="assets/skills/prisma.svg" alt="Prisma">
                             </div>
-
-                            <div class="skill-icon-slot" title="SQL">
-                                <img src="assets/skills/Sql_data_base_with_logo.svg" alt="SQL" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Prisma">
-                                <img src="assets/skills/prisma.png" alt="Prisma" class="skill-icon">
-                            </div>
-
                         </div>
                     </div>
 
                     <!-- DevOps & Infrastructure -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <h3>DevOps & Cloud</h3>
-
+                        <h3 class="skill-group-heading">DevOps &amp; Cloud</h3>
                         <div class="d-flex flex-wrap align-items-center">
-
-                            <div class="skill-icon-slot" title="Docker">
-                                <img src="assets/skills/docker.jpg" alt="Docker" class="skill-icon">
+                            <div class="icon-box-md" title="Docker"><img src="assets/skills/docker.svg" alt="Docker">
                             </div>
-
-                            <div class="skill-icon-slot" title="Kubernetes">
-                                <img src="assets/skills/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" class="skill-icon">
+                            <div class="icon-box-md" title="Kubernetes"><img
+                                    src="assets/skills/Kubernetes_logo_without_workmark.svg" alt="Kubernetes"></div>
+                            <div class="icon-box-md" title="Microsoft Azure"><img src="assets/skills/azure-wordmark.svg"
+                                    alt="Microsoft Azure">
                             </div>
-
-                            <div class="skill-icon-slot" title="Microsoft Azure">
-                                <img src="assets/skills/3840px-Microsoft_Azure_Logo.svg.webp" alt="Microsoft Azure" class="skill-icon">
-                            </div>
-                            <div class="skill-icon-slot" title="Oracle Cloud">
-                                <img src="assets/skills/oracle-cloud.png" alt="Oracle Cloud" class="skill-icon">
-                            </div>
-
+                            <div class="icon-box-md" title="Oracle Cloud"><img src="assets/skills/oracle-cloud.png"
+                                    alt="Oracle Cloud"></div>
                         </div>
                     </div>
 
                     <!-- AI & LLM -->
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <h3>AI & LLM Technologies</h3>
-
+                        <h3 class="skill-group-heading">AI &amp; LLM Technologies</h3>
                         <div class="d-flex flex-wrap align-items-center">
-
-                            <div class="skill-icon-slot" title="LangChain">
-                                <img src="assets/skills/lanchain.jpg" alt="LangChain" class="skill-icon">
+                            <div class="icon-box-md" title="LangChain"><img src="assets/skills/langchain.svg"
+                                    alt="LangChain"></div>
+                            <div class="icon-box-md" title="LangGraph"><img src="assets/skills/langgraph.svg"
+                                    alt="LangGraph"></div>
+                            <div class="icon-box-md" title="Model Context Protocol"><img
+                                    src="assets/skills/Model_Context_Protocol_logo.svg" alt="MCP"></div>
+                            <div class="icon-box-md" title="CrewAI"><img src="assets/skills/crewai.svg" alt="CrewAI">
                             </div>
-
-                            <div class="skill-icon-slot" title="LangGraph">
-                                <img src="assets/skills/langgraph.png" alt="LangGraph" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="Model Context Protocol">
-                                <img src="assets/skills/Model_Context_Protocol_logo.svg" alt="MCP" class="skill-icon">
-                            </div>
-
-                            <div class="skill-icon-slot" title="CrewAI">
-                                <img src="assets/skills/crewai-logo-png_seeklogo-680089.png" alt="CrewAI" class="skill-icon">
-                            </div>
-
                         </div>
                     </div>
 
                 </div>
-
             </accordion-group>
-
 
         </accordion>
     </div>
-
-    
 </div>

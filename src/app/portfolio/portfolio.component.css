@@ -1,14 +1,10 @@
-.filter-logo {
-    width: 25px;
-    height: 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
+/* icon sizing now comes from the global .icon-box-xs utility —
+   no more one-off .filter-logo class. */
 
-.filter-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.filter-group-label {
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .72rem;
 }

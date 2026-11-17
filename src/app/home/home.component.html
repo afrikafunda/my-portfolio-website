@@ -1,30 +1,39 @@
 <div class="container">
     <div class="row">
         <!-- About me -->
-        <div class="col-lg shadow border m-1">
-            <div class="text-center">
-                <h2>About Me</h2>
-                <!-- <img src="../../assets/1774251837813.jpg" alt="profile picturre" width="256" class="rounded-circle"> -->
-                <img src="../../assets/1774251837813.jpg" alt="profile picture" width="256" class="rounded-circle">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, adipisci quibusdam. Alias inventore incidunt corporis aspernatur. Dolores odio, ipsum, excepturi sequi itaque at inventore aut natus, quam recusandae incidunt esse.</p>
+        <div class="col-lg panel m-1">
+            <div class="panel__titlebar">
+                <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+                <span class="panel__titlebar-label">about_me.ts</span>
+            </div>
+            <div class="panel__body text-center">
+                <img src="../../assets/1774251837813.jpg" alt="profile picture" class="avatar-circle avatar-lg">
+                <h2 class="panel__heading mt-3">About Me</h2>
+                <p class="panel__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, adipisci quibusdam. Alias inventore incidunt corporis aspernatur. Dolores odio, ipsum, excepturi sequi itaque at inventore aut natus, quam recusandae incidunt esse.</p>
             </div>
         </div>
-<!-- projects fejureed -->
-        <div class="col-lg shadow border m-1">
-            <div class="text-center">
-                    <h2>Featured Project</h2>
-                    <h4>{{featuredProject.name}}</h4>
-            </div>
-            <carousel>
-                <div *ngFor="let picture of featuredProject.pictures">
-                    <slide> <img src={{picture}} alt="slide" style="display: block; width: 100%;">   
-                    </slide>
-                </div>
-                
-            </carousel>
 
-            <p class="mt-2">{{featuredProject.summary}}</p>
-            <p>Visit the portfolio section to learn more!</p>
+        <!-- Featured project -->
+        <div class="col-lg panel m-1">
+            <div class="panel__titlebar">
+                <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+                <span class="panel__titlebar-label">featured_project.ts</span>
+            </div>
+            <div class="panel__body text-center">
+                <h2 class="panel__heading">Featured Project</h2>
+                <h4 class="panel__subheading">{{featuredProject.name}}</h4>
+
+                <div class="media-frame">
+                    <carousel>
+                        <div *ngFor="let picture of featuredProject.pictures">
+                            <slide><img [src]="picture" alt="slide" style="display: block; width: 100%;"></slide>
+                        </div>
+                    </carousel>
+                </div>
+
+                <p class="panel__text mt-3">{{featuredProject.summary}}</p>
+                <p class="panel__hint">Visit the portfolio section to learn more!</p>
+            </div>
         </div>
     </div>
 </div>

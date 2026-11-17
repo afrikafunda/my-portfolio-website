@@ -1,23 +1,51 @@
-accordion-group::ng-deep .btn-link{
-    color:white;
-
-}
-accordion-group::ng-deep .card-header{
-    background-color:#007bff;
-
+.resume-accordion {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
-.skill-icon-slot {
-    width: 60px;
-    height: 60px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3px;
+/* ngx-bootstrap renders accordion-group content via internal bootstrap
+   classes, so these need ::ng-deep to reach them. */
+::ng-deep accordion-group .card,
+::ng-deep accordion-group .card-body {
+  background: var(--bg-panel-raised);
+  border-color: var(--line);
+  color: var(--text-hi);
 }
 
-.skill-icon {
-    width: 46px;
-    height: 46px;
-    object-fit: contain;
+::ng-deep accordion-group .btn-link {
+  color: var(--text-hi);
+  text-decoration: none;
+  font-family: var(--font-mono);
+}
+
+::ng-deep accordion-group .card-header {
+  background-color: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.chevron {
+  width: 16px;
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(0, 240, 255, .5);
+}
+
+.resume-entry {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.resume-entry .icon-box-lg {
+  margin-bottom: 10px;
+}
+.resume-entry ul { color: var(--text-lo); }
+
+.skill-group-heading {
+  font-size: 1rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }

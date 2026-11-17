@@ -1,0 +1,3 @@
+/* component-specific tweaks only — shared panel/avatar styles live in
+   the global styles.css additions (see GLOBAL-styles-additions.css) */
+.panel { height: 100%; }

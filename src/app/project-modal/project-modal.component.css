@@ -1,0 +1,22 @@
+.modal-title-glitch {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-text {
+  color: var(--text-lo);
+  line-height: 1.6;
+}
+
+.modal-text a {
+  color: var(--cyan);
+}

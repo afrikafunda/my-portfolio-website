@@ -1,0 +1,54 @@
+.console-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-panel-raised), var(--bg-panel));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.console-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 40%, rgba(0, 240, 255, .08) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+
+.console-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow:
+    0 0 0 1px rgba(0, 240, 255, .25),
+    0 14px 30px rgba(0, 0, 0, .55),
+    0 0 26px rgba(0, 240, 255, .12);
+}
+.console-card:hover::before { transform: translateX(120%); }
+
+.console-card__body { padding: 20px; }
+
+.console-card__title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.console-card:hover .console-card__title {
+  animation: title-glitch .35s steps(2, end) 1;
+}
+
+.console-card__summary {
+  color: var(--text-lo);
+  font-size: .92rem;
+  min-height: 48px;
+}
+
+.console-card__footer {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--line);
+  padding: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .console-card::before { display: none; }
+}

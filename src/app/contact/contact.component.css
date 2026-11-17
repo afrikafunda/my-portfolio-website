@@ -1,0 +1,6 @@
+.contact-links .list-group-item img {
+  transition: box-shadow .2s ease;
+}
+.contact-links .list-group-item:hover img {
+  box-shadow: 0 0 12px rgba(0, 240, 255, .5);
+}

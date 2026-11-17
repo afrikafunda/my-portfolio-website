@@ -1,4 +1,4 @@
-import { Component, Renderer2} from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -6,22 +6,22 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.css']
 })
-export class ResumeComponent { 
+export class ResumeComponent {
 
     isWorkExperienceOpen: boolean = false;
     isEducationOpen: boolean = false;
     isCertificationsOpen: boolean = false;
     IsSkillsOpen: boolean = false;
 
-    constructor(private titleService: Title, private renderer: Renderer2){
+    constructor(private titleService: Title, private renderer: Renderer2) {
         this.titleService.setTitle('Afrika Funda - Resume')
-    
-      }
-    downloadFile(){
+    }
+
+    downloadFile() {
       const link = this.renderer.createElement('a');
       link.setAttribute('target', '_blank');
-      link.setAttribute('href', '../..assets/resume.pdf');
-      link.setAttribute('download, Resume.pdf');
+      link.setAttribute('href', '../../assets/resume.pdf');
+      link.setAttribute('download', 'Resume.pdf');
       link.click();
       link.remove();
     }

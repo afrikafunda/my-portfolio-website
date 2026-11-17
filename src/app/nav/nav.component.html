@@ -1,21 +1,20 @@
-<nav class="nav-expand-md border-bottom mb-3">
-    <div class="container">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link text-secondary" routerLink="/home" routerLinkActive="text-dark">Home</a>
-            </li>
+<nav class="site-nav">
+  <div class="site-nav__inner container">
+    <a routerLink="/home" class="site-nav__brand" aria-label="Home">AF_<span class="site-nav__cursor">&#9608;</span></a>
 
-            <li class="nav-item">
-                <a class="nav-link text-secondary" routerLink="/portfolio" routerLinkActive="text-dark">Portfolio</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link text-secondary" routerLink="/resume" routerLinkActive="text-dark">Resume</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link text-secondary" routerLink="/contact" routerLinkActive="text-dark">Contact</a>
-            </li>
-        </ul>
-    </div>
+    <ul class="site-nav__links">
+      <li>
+        <a routerLink="/home" routerLinkActive="is-active" class="site-nav__link">Home</a>
+      </li>
+      <li>
+        <a routerLink="/portfolio" routerLinkActive="is-active" class="site-nav__link">Portfolio</a>
+      </li>
+      <li>
+        <a routerLink="/resume" routerLinkActive="is-active" class="site-nav__link">Resume</a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="is-active" class="site-nav__link">Contact</a>
+      </li>
+    </ul>
+  </div>
 </nav>

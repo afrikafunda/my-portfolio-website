@@ -5,7 +5,7 @@ export class Tag {
     );
 
     static readonly TYPESCRIPT = new Tag(
-        'TypeScript', 'darkred', 'assets/skills/typescript_logo.jpg'
+        'TypeScript', 'darkred', 'assets/skills/Typescript_logo_2020.svg'
     );
 
     static readonly JAVASCRIPT = new Tag(
@@ -21,11 +21,11 @@ export class Tag {
     );
 
     static readonly HTML = new Tag(
-        'HTML5', 'orange', 'assets/skills/HTML5_logo_and_wordmark.svg%20(1).webp'
+        'HTML5', 'orange', 'assets/skills/html5.svg'
     );
 
     static readonly CSS = new Tag(
-        'CSS3', 'blue', 'assets/skills/Official_CSS_Logo.svg'
+        'CSS3', 'blue', 'assets/skills/css.svg'
     );
 
 
@@ -63,7 +63,7 @@ export class Tag {
 
     // Databases & ORM
     static readonly MONGODB = new Tag(
-        'MongoDB', 'green', 'assets/skills/mongodb-icon-2.svg'
+        'MongoDB', 'green', 'assets/skills/mongodb-wordmark-dark.svg'
     );
 
     static readonly SQL = new Tag(
@@ -71,13 +71,13 @@ export class Tag {
     );
 
     static readonly PRISMA = new Tag(
-        'Prisma', 'dark', 'assets/skills/prisma.png'
+        'Prisma', 'dark', 'assets/skills/prisma.svg'
     );
 
 
     // DevOps & Cloud
     static readonly DOCKER = new Tag(
-        'Docker', 'blue', 'assets/skills/docker.jpg'
+        'Docker', 'blue', 'assets/skills/docker.svg'
     );
 
     static readonly KUBERNETES = new Tag(
@@ -85,7 +85,7 @@ export class Tag {
     );
 
     static readonly AZURE = new Tag(
-        'Microsoft Azure', 'blue', 'assets/skills/3840px-Microsoft_Azure_Logo.svg.webp'
+        'Microsoft Azure', 'blue', 'assets/skills/azure-wordmark.svg'
     );
 
     static readonly ORACLE_CLOUD = new Tag(
@@ -95,11 +95,11 @@ export class Tag {
 
     // AI & LLM Technologies
     static readonly LANGCHAIN = new Tag(
-        'LangChain', 'green', 'assets/skills/lanchain.jpg'
+        'LangChain', 'green', 'assets/skills/langchain.svg'
     );
 
     static readonly LANGGRAPH = new Tag(
-        'LangGraph', 'purple', 'assets/skills/langgraph.png'
+        'LangGraph', 'purple', 'assets/skills/langgraph.svg'
     );
 
     static readonly MCP = new Tag(
@@ -107,7 +107,7 @@ export class Tag {
     );
 
     static readonly CREWAI = new Tag(
-        'CrewAI', 'blue', 'assets/skills/crewai-logo-png_seeklogo-680089.png'
+        'CrewAI', 'blue', 'assets/skills/crewai.svg'
     );
 
 
@@ -115,7 +115,7 @@ export class Tag {
         private readonly key: string,
         public readonly color: string,
         public readonly imageUrl: string
-    ) {}
+    ) { }
 
     toString(): string {
         return this.key;

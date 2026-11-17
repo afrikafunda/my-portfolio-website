@@ -1,15 +1,277 @@
-/* You can add global styles to this file, and also import other style files */
-.container {
-    max-width: 1140px;
+/* =====================================================================
+   DIGITAL GLITCH THEME — append this entire block to the END of
+   src/styles.css. It does not remove anything you already have there
+   (e.g. your bootstrap import) — it only adds the new theme on top.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-void: #06080d;
+  --bg-panel: #0d121c;
+  --bg-panel-raised: #121929;
+  --line: rgba(0, 240, 255, 0.14);
+  --line-strong: rgba(0, 240, 255, 0.4);
+  --text-hi: #eef5ff;
+  --text-lo: #8591a8;
+  --cyan: #00f0ff;
+  --magenta: #ff2d7a;
+  --lime: #c6ff3d;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 3px;
 }
 
-.tag {
-    padding: 0 20px;
-    height: 30px;
-    width: fit-content;
-    font-size: 14px;
-    line-height: 30px;
-    border-radius: 25px;
-    background-color: blue;
-    color: white;
+/* ---------- base ---------- */
+html, body {
+  background: var(--bg-void);
+  color: var(--text-hi);
+  font-family: var(--font-sans);
+}
+
+a { color: var(--cyan); }
+a:hover { color: var(--magenta); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+hr { border-color: var(--line); opacity: 1; }
+
+/* ---------- bootstrap component re-skin (global, since many
+   templates rely on stock bootstrap classes) ---------- */
+.card {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line);
+  color: var(--text-hi);
+}
+.card-footer { background: var(--bg-panel); border-top: 1px solid var(--line); }
+
+.btn-primary {
+  background: transparent;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  border-radius: var(--radius);
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--cyan);
+  color: #04060a;
+  box-shadow: 0 0 18px rgba(0, 240, 255, .45);
+}
+
+.btn-outline-primary {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  font-family: var(--font-mono);
+}
+.btn-outline-primary:hover {
+  background: var(--cyan);
+  color: #04060a;
+  box-shadow: 0 0 14px rgba(0, 240, 255, .4);
+}
+
+.btn-outline-secondary {
+  color: var(--magenta);
+  border-color: var(--magenta);
+  font-family: var(--font-mono);
+}
+.btn-outline-secondary:hover {
+  background: var(--magenta);
+  color: #04060a;
+  box-shadow: 0 0 14px rgba(255, 45, 122, .4);
+}
+
+.list-group-item {
+  background: var(--bg-panel-raised);
+  border-color: var(--line);
+  color: var(--text-hi);
+}
+.list-group-item:hover {
+  background: var(--bg-panel);
+  border-color: var(--line-strong);
+}
+
+.form-check-input {
+  background-color: var(--bg-panel);
+  border-color: var(--line-strong);
+}
+.form-check-input:checked {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.text-primary { color: var(--cyan) !important; }
+.text-secondary { color: var(--text-lo) !important; }
+.text-dark { color: var(--text-hi) !important; }
+.border { border-color: var(--line) !important; }
+.shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, .5) !important; }
+
+/* ngx-bootstrap modal */
+.modal-content {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line-strong);
+  color: var(--text-hi);
+}
+.modal-header, .modal-footer { border-color: var(--line); }
+.modal-backdrop.show { opacity: .75; }
+.btn-close { filter: invert(1) grayscale(1); }
+
+/* ---------- utility: glitch text ---------- */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  color: var(--text-hi);
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+.glitch-text::before {
+  color: var(--cyan);
+  clip-path: inset(0 0 55% 0);
+  animation: glitch-top 4s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+  color: var(--magenta);
+  clip-path: inset(55% 0 0 0);
+  animation: glitch-bottom 3.2s infinite linear alternate-reverse;
+}
+@keyframes glitch-top {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2px, -1px); }
+  20% { transform: translate(2px, 1px); }
+  30% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  50%, 90% { transform: translate(0, 0); }
+}
+@keyframes glitch-bottom {
+  0%, 100% { transform: translate(0, 0); }
+  15% { transform: translate(2px, 1px); }
+  35% { transform: translate(-2px, -1px); }
+  55% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, 1px); }
+}
+
+/* one-shot title glitch, used on hover triggers */
+@keyframes title-glitch {
+  0%   { transform: translate(0); text-shadow: none; }
+  20%  { transform: translate(-1px, 1px); text-shadow: 1px 0 var(--magenta), -1px 0 var(--cyan); }
+  40%  { transform: translate(1px, -1px); text-shadow: -1px 0 var(--magenta), 1px 0 var(--cyan); }
+  60%  { transform: translate(-1px, 0); text-shadow: 1px 0 var(--cyan), -1px 0 var(--magenta); }
+  80%  { transform: translate(1px, 0); text-shadow: none; }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-text::before,
+  .glitch-text::after { animation: none; display: none; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ---------- utility: consistent icon / avatar sizing ----------
+   Use these everywhere instead of ad-hoc width/height attributes,
+   so every logo and photo sits in a uniform, predictable box. */
+
+/* Logos & brand icons: never distorted, always fully visible inside
+   a fixed-size box (object-fit: contain). Use for tech/skill icons,
+   company logos, education/certification logos. */
+.icon-box-xs, .icon-box-sm, .icon-box-md, .icon-box-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-box-xs { width: 28px;  height: 28px; }
+.icon-box-sm { width: 40px;  height: 40px; }
+.icon-box-md { width: 60px;  height: 60px; }
+.icon-box-lg { width: 90px;  height: 90px; }
+.icon-box-xs img, .icon-box-sm img, .icon-box-md img, .icon-box-lg img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Photographic / circular avatars: profile photo, headshot-style
+   social icons. Cropped to fill (object-fit: cover). */
+.avatar-circle {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.avatar-xs { width: 32px;  height: 32px; }
+.avatar-sm { width: 44px;  height: 44px; }
+.avatar-lg { width: 180px; height: 180px; }
+
+/* ---------- utility: terminal-style panel ----------
+   Used for the about/featured-project cards on Home, the filter
+   panel on Portfolio, and anywhere else a "console window" look fits. */
+.panel {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.panel__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--line);
+}
+.panel__titlebar-label {
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--text-lo);
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot--red { background: #ff5f57; }
+.dot--yellow { background: #febc2e; }
+.dot--green { background: #28c840; }
+
+.panel__body { padding: 22px 20px; }
+.panel__heading { font-size: 1.4rem; margin-bottom: 6px; }
+.panel__subheading { color: var(--cyan); font-family: var(--font-mono); font-size: 1rem; }
+.panel__text { color: var(--text-lo); line-height: 1.6; }
+.panel__hint { color: var(--text-lo); font-size: .85rem; font-style: italic; }
+
+.media-frame {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 240, 255, .08);
+}
+
+/* ---------- utility: tag pill (replaces raw background-color blobs) ---------- */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--text-hi);
+}
+.tag-pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
