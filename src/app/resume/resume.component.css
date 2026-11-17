@@ -1,0 +1,23 @@
+accordion-group::ng-deep .btn-link{
+    color:white;
+
+}
+accordion-group::ng-deep .card-header{
+    background-color:#007bff;
+
+}
+
+.skill-icon-slot {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+
+.skill-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
